@@ -39,5 +39,12 @@ let characters = characterCodes(33,47).concat(characterCodes(58,64)).concat(char
  
 return finalpassword
 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+
+}
+
 
   
