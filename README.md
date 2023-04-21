@@ -30,5 +30,14 @@ let characters = characterCodes(33,47).concat(characterCodes(58,64)).concat(char
 
 
   
+ 
+ for(let i = 0; i < passwordLength; i++) {
+  let character = random(possibleCharacters);
+  finalpassword.push(character);
+}
+
+ 
+return finalpassword
+
 
   

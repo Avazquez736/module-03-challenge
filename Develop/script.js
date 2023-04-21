@@ -1,6 +1,6 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
-
+var finalpassword = []
 var possibleCharacters=[]
 var Specialchar = ['!','@','#','$','%','^','&','*']
 var numbers = [0,1,2,3,4,5,6,7,8,9]
@@ -10,8 +10,19 @@ var lowerCasechar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
 
 
 
+
 function generatePassword(){
   // User prompts
+  function random(arr) {
+    var randomNumber = Math.floor(Math.random() * arr.length);
+    return arr[randomNumber];
+  }
+  var passwordLength = prompt('How long would you like your password?(8 to 128)')
+  
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert('Error! select number between 8 - 128');
+    return null;
+  }
   var specialCharacters = confirm('Do you want special charecters?(yes/no)')
 
   var upperCase = confirm('Do you want upper case letters?(yes/no)')
@@ -20,16 +31,7 @@ function generatePassword(){
 
   var includeNumbers = confirm('Do you want numbers?(yes/no)')
 
-  var passwordLength = prompt('How long would you like your password?(8 to 128)')
-  
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert('Error! select number between 8 - 128');
-    return null;
-  }
-
-  
-
- if(specialCharacters){
+if(specialCharacters){
   possibleCharacters = possibleCharacters.concat(Specialchar)
  }
  if(upperCase){
@@ -41,10 +43,12 @@ function generatePassword(){
  if(includeNumbers){
   possibleCharacters = possibleCharacters.concat(numbers)
  }
+ for(let i = 0; i < passwordLength; i++) {
+  let character = random(possibleCharacters);
+  finalpassword.push(character);
+}
+return finalpassword.join('')
 
- 
-
- 
 }
 
 // Get references to the #generate element
