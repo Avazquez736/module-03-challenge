@@ -48,6 +48,7 @@ if(specialCharacters){
   let character = random(possibleCharacters);
   finalpassword.push(character);
 };
+
 return finalpassword.join('')
 
 }
