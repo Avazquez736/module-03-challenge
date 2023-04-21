@@ -12,6 +12,23 @@
   var lowerCase= lowerCaseinput;
   var number= numbersinput;
 
+
+function characterCodes(low, high){
+  let array = []
+  for( let i = low; i <= high; i++){
+    array.push(i)
+  }
+  return array
+}
+
+//possible password characters
+let possiblePasswordsCharacters=[]
+let numbers = characterCodes(48, 57)
+let upperCaseletters = characterCodes(97,122)
+let lowerCaseletters = characterCodes(65,90)
+let characters = characterCodes(33,47).concat(characterCodes(58,64)).concat(characterCodes(91,96)).concat(characterCodes(123,126))
+
+
   
 
   
