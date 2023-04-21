@@ -13,7 +13,7 @@ function random(arr) {
    }
 
  function generatePassword(){
-  
+   
    var passwordLength = prompt('How long would you like your password?(8 to 128)')
 
    if (passwordLength < 8 || passwordLength > 128) {
@@ -33,26 +33,32 @@ function random(arr) {
 
   if(specialCharacters){
    possibleCharacters = possibleCharacters.concat(Specialchar)
-  }
+  };
   if(upperCase){
     possibleCharacters = possibleCharacters.concat(upperCasechar)
-  }
+  };
   if(lowerCase){
   possibleCharacters = possibleCharacters.concat(lowerCasechar)
-  }
+  };
  
   if(includeNumbers){
    possibleCharacters = possibleCharacters.concat(numbers)
-  }
+  };
 
   for(let i = 0; i < passwordLength; i++) {
    let character = random(possibleCharacters);
    finalpassword.push(character);
  }
+ generateBtn.addEventListener("click", function(){
+  document.querySelector(".card-body").placeholder="Your Secure Password"
+});
+  
  return finalpassword
 
  }
-
+ 
+ generateBtn.addEventListener("click", function(){
+  document.querySelector(".card-body").placeholder="Your Secure Password"})
  // Get references to the #generate element
 // Write password to the #password input
 function writePassword() {
@@ -63,4 +69,7 @@ function writePassword() {
 
 }
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", function(){
+  document.querySelector(".card-body").innerHTML.placeholder="Your Secure Password"})
